@@ -18,7 +18,7 @@ int main(void)
 	{
 		if (x % i == 0)
 		{
-			int j;
+			unsigned long int j;
 			int count = 0;
 
 			for (j = 2; j < i; j++)
