@@ -8,9 +8,12 @@
  * Return: If nmemb = 0, size = 0, or the function fails - NULL.
  *Otherwise - a pointer to the allocated memory.
  */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
+	char *p;
+	int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -19,5 +22,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (ptr == NULL)
 		return (NULL);
+
+	p = ptr;
+
+	for (i = 0; i < (size * nmemb); i++)
+		p[i] = '\0';
+
 	return (ptr);
 }
