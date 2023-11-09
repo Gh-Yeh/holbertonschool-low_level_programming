@@ -11,13 +11,11 @@
 
 int *array_range(int min, int max)
 {
-	int i, j;
+	int i, j, *p;
 	int size;
 
 	if (min > max)
 		return (NULL);
-
-	int *p;
 
 	size = max - min + 1;
 
