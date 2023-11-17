@@ -10,10 +10,12 @@
  * Description: If separator is NULL, it is not printed.
  *If one of the strings if NULL, (nil) is printed instead.
  */
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int index;
+	char *name;
 
 
 	va_start(ap, n);
@@ -21,10 +23,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (index = 0; index < n; index++)
 	{
-		char *name = va_arg(ap, char*);
+		name = va_arg(ap, char*);
 
 		if (name != NULL)
-			printf("%s", va_arg(ap, char*));
+			printf("%s", name);
 		else
 			printf("(nil)");
 
