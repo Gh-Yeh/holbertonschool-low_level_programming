@@ -7,8 +7,6 @@ void free_list(list_t *head)
 {
 	list_t *next;
 
-	current = next = head;
-
 	while (head != 0)
 	{
 		next = next->next;
