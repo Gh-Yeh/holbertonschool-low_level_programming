@@ -25,27 +25,28 @@ dlistint_t *createnew(dlistint_t *newnode, int n)
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	if (*h == NULL)
-		return (NULL);
 	dlistint_t *newnode;
 	dlistint_t *temp = head;
+	dlistint_t *head = *h;
+
+	if (*h == NULL)
+		return (NULL);
 	unsigned int count = 0;
 	unsigned int trev = 0;
-	dlistint_t *head = *h;
 
 	while (temp)
 	{
 		temp = temp->next;
 		count++;
 	}
-	if (idx > count || idx < 0)
+	if (idx > count)
 		return (NULL);
 	else if (idx == 0)
 		return (add_dnodeint(h, n));
 	else if (idx == count - 1)
 		return (add_dnodeint_end(h, n));
 	temp = head;
-	newnode = createnew(newnode, int n);
+	newnode = createnew(newnode, n);
 
 	if (newnode == NULL)
 		return (NULL);
